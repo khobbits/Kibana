@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
   window.i = 0;
   $.history.init(pageload);
 
-  window.freq = 10;
+  window.freq = 1;
 
   $("#pause_stream").click(function () {
     if (window.pause == true) {
@@ -25,7 +25,7 @@ jQuery(document).ready(function() {
 });
 
 function pageload(hash) {
-  window.freq = 10;
+  window.freq = 1;
   if (hash) {
     window.last_time = "";
     window.hasHead = false;

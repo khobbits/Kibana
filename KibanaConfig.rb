@@ -13,7 +13,7 @@ module KibanaConfig
 
   # The adress ip Kibana should listen on. Comment out or set to
   # 0.0.0.0 to listen on all interfaces.
-  KibanaHost = '127.0.0.1'
+  #KibanaHost = '127.0.0.1'
   
   # Below is an example showing how to configure the same variables
   # using environment variables, which can be set in an init script
@@ -23,16 +23,13 @@ module KibanaConfig
   # KibanaPort = ENV['KIBANA_PORT'] ? ENV['KIBANA_PORT'] : 5601
   # KibanaHost = ENV['KIBANA_HOST'] ? ENV['KIBANA_HOST'] : 'localhost'
 
-  #Set the Net::HTTP read/open timeouts for the connection to the ES backend
-  ElasticsearchTimeout = 500
-
   # The record type as defined in your logstash configuration.
   # Seperate multiple types with a comma, no spaces. Leave blank
   # for all.
   Type = ''
 
   # Results to show per page
-  Per_page = 50
+  Per_page = 300
 
   # Timezone. Leave this set to 'user' to have the user's browser autocorrect.
   # Otherwise, set a timezone string
@@ -47,7 +44,7 @@ module KibanaConfig
 
   # Change which fields are shown by default. Must be set as an array
   # Default_fields = ['@fields.vhost','@fields.response','@fields.request']
-  Default_fields = ['@message']
+  Default_fields = ['@source_host','@fields.priority','@message']
 
   # If set to true, Kibana will use the Highlight feature of Elasticsearch to 
   # display highlighted search results
@@ -70,7 +67,7 @@ module KibanaConfig
 
   # When using analyze, use this many of the most recent
   # results for user's query
-  Analyze_limit = 2000
+  Analyze_limit = 10000
 
   # Show this many results in analyze/trend/terms/stats modes
   Analyze_show = 25
@@ -143,7 +140,7 @@ module KibanaConfig
   Disable_fullscan = false
 
   # Set headers to allow kibana to be loaded in an iframe from a different origin.
-  Allow_iframed = false
+  Allow_iframed = true
 
   # Use this interval as fallback.
   Fallback_interval = 900

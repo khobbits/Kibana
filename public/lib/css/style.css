@@ -409,3 +409,11 @@ select#user_interval {
 .logdetails {
   max-width: 1500px;
 }
+
+.logrow {
+  max-width: 1500px;
+}
+
+.column {
+  max-width: 1000px;
+}

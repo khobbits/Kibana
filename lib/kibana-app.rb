@@ -15,7 +15,6 @@ class KibanaApp < Sinatra::Base
     if KibanaConfig::Allow_iframed
       set :protection, :except => :frame_options
     end
-
     enable :sessions
   end
 
@@ -329,7 +328,6 @@ class KibanaApp < Sinatra::Base
   end
 
   get '/js/timezone.js' do
-    headers "Content-Type" => "text/javascript"
-    erb :timezone
+    erb :timezone, :content_type => "application/javascript" 
   end
 end
